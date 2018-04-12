@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="FormsCSS.css" rel="stylesheet" />
+</head>
+
+<body>
+	<form name="MovieQuiz">
+    	<fieldset>
+    	<legend>Brandon's Movie Quiz</legend>
+        <div>
+        	<fieldset>
+        	<legend> Question #1 </legend>
+        	<p>Who plays the lead character in "La La Land?"</p>
+            <input type="radio" name="LA" value="emmawatson"/> Emma Watson
+            <br />
+            <input type="radio" name="LA" value="emmathompson"/> Emma Thompson
+            <br />
+            <input type="radio" name="LA" value="emmastone"/> Emma Stone
+            <br />
+            <input type="radio" name="LA" value="jlaw"/> Jennifer Lawrence
+        	</fieldset>
+        </div>
+        <div>
+        	<fieldset>
+        	<legend> Question #2 </legend>
+        	<p>Which of the following is not produced by Disney?</p>
+            <input type="radio" name="D" value="mulan"/> Mulan
+            <br />
+            <input type="radio" name="D" value="tangled"/> Tangled 
+            <br />
+            <input type="radio" name="D" value="bnb"/> Beauty and the Beast
+            <br />
+            <input type="radio" name="D" value="shrek"/> Shrek Series
+            <br />
+            <input type="radio" name="D" value="moana"/> Moana
+            </fieldset>
+        </div>
+        <div>
+        	<fieldset>
+        	<legend> Question #3 </legend>
+        	<p>Which movie does <em><strong>NOT</strong></em> feature Emma Watson?</p>
+            <input type="checkbox" name="sow" value="sow"/> Shape of Water
+            <br />
+            <input type="checkbox" name="hp" value="hp"/> Harry Potter Series
+            <br />
+            <input type="checkbox" name="tbb" value="tbb"/> Les Miserabes
+            <br />
+            <input type="checkbox" name="tpbw" value="tpbw"/> The Perks of Being a Wallflower
+            <br />
+            <input type="checkbox" name="tc" value="tc"/> The Circle
+            <br />
+            <input type="checkbox" name="slp" value="slp"/> Beauty and the Beast
+          </fieldset>
+        </div>
+        <div>
+        	<fieldset>
+        	<legend> Question #4 </legend>
+        	<p> Name this movie: "_____ is the Warmest Color" </p>
+            <input type="color" name="BLUE" />
+            </fieldset>
+        <div>
+            <fieldset>
+        	<legend> Question #5 </legend>
+        	<p>Which character is not related to Gretta in "Begin Again?"</p>
+            <select name="BA">
+            	<option value="Steve"> Steve </option>
+                <option value="Dan"> Dan </option>
+                <option value="Miranda Priestly">Miranda Priestly</option>
+                <option value="Dave">Dave</option>
+            </select>
+            </fieldset>
+        </div>
+        <div>
+        	<fieldset>
+        	<legend> Question #6 </legend>
+        	<p>What is the name of the third man that Janie met in "Their Eyes Were Watching God?"</p>
+            <input name="TEWWG" type="text" placeholder="Answer here" />
+            </fieldset>
+        </div>
+        <div>
+        	<fieldset>
+        	<legend> Ta-Dah </legend>
+        	<p>Thanks for playing!</p>
+        	<input type="submit" onclick="answerChecker()" />
+            </fieldset>
+        </div>
+        </fieldset>
+    </form>
+    <script>
+	function answerChecker() {
+		if(document.MovieQuiz.LA.value==="emmastone") {
+			alert("Question 1 is correct!");
+		} else {
+			alert("Question 1 WRONG!");
+		}
+		if(document.MovieQuiz.D.value==="shrek") {
+			alert("Question 2 is correct!");
+		} else {
+			alert("Question 2 WRONG!");
+		}
+		if(document.MovieQuiz.sow.checked===false && document.MovieQuiz.tbb.checked===false && document.MovieQuiz.tc.checked===true && document.MovieQuiz.slp.checked===true && document.MovieQuiz.hp.checked===true && document.MovieQuiz.tpbw.checked===true ) {
+			alert("Emma Watson wasn't in that! Congrats");
+		} else {
+			alert("Emma was in it. Wrong.");
+		}		
+		if(document.MovieQuiz.BLUE.value==="#0000FF") {
+			alert("Question 4 is correct!");
+		} else {
+			alert("Question 4 WRONG!");
+		}	
+		if(document.MovieQuiz.BA.value==="Miranda Priestly") {
+			alert("Question 5 is correct!");
+		} else {
+			alert("Question 5 WRONG!");
+		}
+		if(document.MovieQuiz.TEWWG.value==="Tea Cake") {
+			alert("Question 6 is correct!");
+		} else {
+			alert("Question 6 WRONG!");
+		}
+	}
+
+	
+	</script>
+</body>
+</html>
